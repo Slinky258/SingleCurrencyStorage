@@ -77,7 +77,7 @@ class GivePlayerDialog
 			w = (6 / 40);
 			h = (1 / 25);
 		};
-		class RscTextT_10005 : RscTextT
+		class RscTextT_10005 : ZSC_RscText
 		{
 			idc = 14003;
 			text = "";
@@ -138,7 +138,7 @@ class BankDialog
 			h = 0.2;
 		};
 
-		class RscTextT_1005 : RscTextT
+		class RscTextT_1005 : ZSC_RscText
 		{
 			idc = 13002;
 			text = "";
@@ -208,7 +208,7 @@ class BankDialog
 			h = 0.2;
 		};
 
-		class RscTextT_1004 : RscTextT
+		class RscTextT_1004 : ZSC_RscText
 		{
 			idc = 13001;
 			text = "";

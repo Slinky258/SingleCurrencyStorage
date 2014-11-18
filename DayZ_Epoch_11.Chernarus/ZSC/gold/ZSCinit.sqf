@@ -88,10 +88,10 @@ BankDialogDepositAmount = {
 	}else{
 		_vehicleType = typeOf ZSC_CurrentStorage; 
 		if(isClass(configFile >> "CfgVehicles" >> _vehicleType ))then{									
-		_vehicleMagazines = getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "transportMaxMagazines");		
-		_maxCap = _vehicleMagazines * ZSC_MaxMoneyInVechileMultiplier;	
+			_vehicleMagazines = getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "transportMaxMagazines");		
+			_maxCap = _vehicleMagazines * ZSC_MaxMoneyInVechileMultiplier;	
 		}else{
-		_maxCap = 0;
+			_maxCap = 0;
 		};
 	};
 		
