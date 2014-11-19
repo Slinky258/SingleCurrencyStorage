@@ -103,7 +103,7 @@ BankDialogDepositAmount = {
 		cutText ["You can not deposit more than you have.", "PLAIN DOWN"];
 	};
 
-	if( ((_bank + _amount ) >  _maxCap)) then		
+	if( ((_bank + _amount ) >  _maxCap)) then{		
 			cutText [format["You can only store a max of %1 %2, in this storage.", [_maxCap] call BIS_fnc_numberText,CurrencyName], "PLAIN DOWN"];
 	}else{	
 		player setVariable["cashMoney",(_wealth - _amount),true];
