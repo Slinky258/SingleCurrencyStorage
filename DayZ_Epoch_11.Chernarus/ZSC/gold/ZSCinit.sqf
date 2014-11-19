@@ -40,10 +40,13 @@ BankDialogUpdateAmounts = {
 	}else{		
 		_vehicleType = typeOf _storage; 
 		if(isClass(configFile >> "CfgVehicles" >> _vehicleType ))then{									
-		_vehicleMagazines = getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "transportMaxMagazines");		
-		_sizeOfMoney = _vehicleMagazines * ZSC_MaxMoneyInVechileMultiplier;		
-		ctrlSetText [BankDialogPlayerBalance, format["%1 %2", (player getVariable ['cashMoney', 0] call BIS_fnc_numberText), CurrencyName]];
-		ctrlSetText [BankDialogBankBalance, format["%1 / %3 %2", (_storage getVariable ['bankMoney', 0] call BIS_fnc_numberText), CurrencyName, _sizeOfMoney]];
+			_vehicleMagazines = getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "transportMaxMagazines");		
+			_sizeOfMoney = _vehicleMagazines * ZSC_MaxMoneyInVechileMultiplier;		
+			ctrlSetText [BankDialogPlayerBalance, format["%1 %2", (player getVariable ['cashMoney', 0] call BIS_fnc_numberText), CurrencyName]];
+			ctrlSetText [BankDialogBankBalance, format["%1 / %3 %2", (_storage getVariable ['bankMoney', 0] call BIS_fnc_numberText), CurrencyName, _sizeOfMoney]];
+		}else{
+			ctrlSetText [BankDialogPlayerBalance, format["Can not get vehicle capacity!","test"]];
+			ctrlSetText [BankDialogBankBalance, format["Can not get vehicle capacity!","test"]];
 		};
 	};
 };
