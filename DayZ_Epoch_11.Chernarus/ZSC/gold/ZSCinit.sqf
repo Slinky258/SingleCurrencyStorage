@@ -4,8 +4,8 @@ call compile preprocessFileLineNumbers "ZSC\gold\player_traderMenu.sqf";
 
 BIS_fnc_numberDigits = compile preprocessFileLineNumbers "ZSC\compiles\numberDigits.sqf";
 BIS_fnc_numberText = compile preprocessFileLineNumbers "ZSC\compiles\numberText.sqf"; 
-SC_fnc_removeCoins = compile preprocessFileLineNumbers "ZSC\compiles\numberDigits.sqf";
-SC_fnc_addCoins = compile preprocessFileLineNumbers "ZSC\compiles\numberDigits.sqf";
+SC_fnc_removeCoins = compile preprocessFileLineNumbers "ZSC\compiles\SC_fnc_removeCoins.sqf";
+SC_fnc_addCoins = compile preprocessFileLineNumbers "ZSC\compiles\SC_fnc_addCoins.sqf";
 
 /*overwrites*/
 if( isNil "ZSC_Overwrite_SelfActions" || ZSC_Overwrite_SelfActions)then{
