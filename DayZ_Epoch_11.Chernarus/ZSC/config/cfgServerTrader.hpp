@@ -66,4 +66,5 @@ class CfgTraderCategory {
 	#include "Category\OWSportsCars.hpp"
 	#include "Category\OWSuperCars.hpp"
 	#include "Category\OWTARVariants.hpp"
+	#include "Category\DefaultMoney.hpp"
 };
