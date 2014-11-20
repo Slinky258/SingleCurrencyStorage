@@ -502,7 +502,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 
 	// cars 
-	if( !_isMan &&_isAlive && !_isMan && !locked _cursorTarget && !(_cursorTarget isKindOf "Bicycle") && (player distance _cursorTarget < 5)) then {		
+	if( _isVehicle && !_isMan &&_isAlive && !_isMan && !locked _cursorTarget && !(_cursorTarget isKindOf "Bicycle") && (player distance _cursorTarget < 5)) then {		
 		if (s_bank_dialog2 < 0) then {
 			s_bank_dialog2 = player addAction ["Money Storage", "ZSC\actions\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 		};			

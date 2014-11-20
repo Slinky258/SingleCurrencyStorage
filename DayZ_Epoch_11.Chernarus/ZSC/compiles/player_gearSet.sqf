@@ -1,14 +1,17 @@
-private ["_inventory","_wpns","_mags","_idc","_isOK"];
+private ["_inventory","_wpns","_mags","_idc","_isOK","_money"];
 _inventory = _this;
 if (count _inventory > 0) then {
 	_wpns = _inventory select 0;
 	_mags = _inventory select 1;
 	
 	if (count _inventory > 2) then {
-		_money = _inventory select 2;
+		_money =  _inventory select 2;
+		player setVariable["cashMoney",_money,true];
 	}else{
-		_money = 0;
+		player setVariable["cashMoney",0,true];
 	};
+	
+	
 	
 	//Add inventory
 	{

@@ -12,8 +12,8 @@
 			type = 13;
 			size = 0.040;
             x = safezoneX + (safezoneW -0.35);
-        	y = safezoneY + 0.20 * safezoneW;
-			w = 0.35; h = 0.60;
+        	y = safezoneY + 0.40 * safezoneW;
+			w = 0.35; h = 0.20;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};

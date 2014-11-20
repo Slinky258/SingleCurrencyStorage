@@ -127,12 +127,12 @@ class BankDialog
 
 	class Controls {
 
-		class CashTitle : ZSC_RscStructuredText
+		class CashTitle : ZSC_RscText
 		{
 			idc = 2701;
-			text = "Bank";
+			text = "Storage";
 			colorText[] = {0.8784,0.8471,0.651,1};
-			x = 0.39;
+			x = 0.36;
 			y = 0.26;
 			w = 0.3;
 			h = 0.2;
@@ -163,7 +163,7 @@ class BankDialog
 		class Title : ZSC_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Banking";
+			text = "Storage";
 			colorText[] = {1,1,1,1};
 			x = 0.35;
 			y = 0.2;
