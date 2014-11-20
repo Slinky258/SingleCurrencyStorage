@@ -1,4 +1,4 @@
-private ["_weapons","_backpackWpn","_backpackMag","_currentWpn","_backpackWpnTypes","_backpackWpnQtys","_countr","_class","_position","_dir","_currentAnim","_tagSetting","_playerUID","_countMags","_magazines","_primweapon","_secweapon","_newBackpackType","_muzzles","_oldUnit","_group","_newUnit","_playerObjName","_wpnType","_ismelee"];
+private ["_weapons","_backpackWpn","_backpackMag","_currentWpn","_backpackWpnTypes","_backpackWpnQtys","_countr","_class","_position","_dir","_currentAnim","_tagSetting","_playerUID","_countMags","_magazines","_primweapon","_secweapon","_newBackpackType","_muzzles","_oldUnit","_group","_newUnit","_playerObjName","_wpnType","_ismelee","_GPS","_NVG","_Compass","_Watch","_Map","_Radio"];
 
 _class = _this;
 _position = getPosATL player;
@@ -12,6 +12,12 @@ _magazines = _countMags select 0;
 
 _cashMoney = player getVariable["cashMoney",0];
 
+if (player hasWeapon "ItemGPS") then {_GPS = true;};
+if (player hasWeapon "NVGoggles") then {_NVG = true;};  
+if (player hasWeapon "ItemCompass") then {_Compass = true;};
+if (player hasWeapon "ItemWatch") then {_Watch = true;};
+if (player hasWeapon "ItemMap") then {_Map = true;};                
+if (player hasWeapon "ItemRadio") then {_Radio = true;};
 
 if ((_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText [(localize "str_epoch_player_17"), "PLAIN DOWN"]};
 
@@ -47,6 +53,7 @@ player setPosATL dayz_spawnPos;
 _oldUnit = player;
 _group = createGroup west;
 _newUnit = _group createUnit [_class,dayz_spawnPos,[],0,"NONE"];
+[_newUnit] joinSilent createGroup WEST;
 _newUnit setPosATL _position;
 _newUnit setDir _dir;
 _newUnit setVariable ["cashMoney",_cashMoney,true];
@@ -101,6 +108,13 @@ if (_primweapon == "MeleeFishingPole") then {
 if(_secweapon != (secondaryWeapon _newUnit) && _secweapon != "") then {
 	_newUnit addWeapon _secweapon;		
 };
+
+if (!isNil '_GPS' ) then {_newUnit removeWeapon "ItemGPS";}; 
+if (!isNil '_NVG' ) then {_newUnit removeWeapon "NVGoggles";};  
+if (!isNil '_Compass' ) then {_newUnit removeWeapon "ItemCompass";};
+if (!isNil '_Watch' ) then {_newUnit removeWeapon "ItemWatch";};
+if (!isNil '_Map' ) then {_newUnit removeWeapon "ItemMap";};
+if (!isNil '_Radio' ) then {_newUnit removeWeapon "ItemRadio";};
 
 _switchUnit = {
 	addSwitchableUnit _newUnit;
@@ -172,3 +186,10 @@ if (_ismelee == "true") then {
 {player reveal _x} count (nearestObjects [getPosATL player, dayz_reveal, 50]);
 
 player setVariable ["cashMoney",_cashMoney,true];
+
+if (!isNil '_GPS' ) then {player removeWeapon "ItemGPS";}; 
+if (!isNil '_NVG' ) then {player removeWeapon "NVGoggles";};  
+if (!isNil '_Compass' ) then {player removeWeapon "ItemCompass";};
+if (!isNil '_Watch' ) then {player removeWeapon "ItemWatch";};
+if (!isNil '_Map' ) then {player removeWeapon "ItemMap";};
+if (!isNil '_Radio' ) then {player removeWeapon "ItemRadio";};
