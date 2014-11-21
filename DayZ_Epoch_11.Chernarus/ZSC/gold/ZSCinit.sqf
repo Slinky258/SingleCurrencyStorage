@@ -79,13 +79,14 @@ BankDialogWithdrawAmount = {
 
 BankDialogDepositAmount = {
 	private ["_amount","_bank","_wealth"];	
-	_vehicleType = typeOf ZSC_CurrentStorage; 
+	_vehicleType = typeOf ZSC_CurrentStorage; 	
+	_maxCap = 0;	
+	_displayName = "Storage";
 	if(isClass(configFile >> "CfgVehicles" >> _vehicleType ))then{	
 		_displayName = getText  (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");		
 		_vehicleMagazines = getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "transportMaxMagazines");		
 		_maxCap = _vehicleMagazines * ZSC_MaxMoneyInStorageMultiplier;	
-	}else{
-		_maxCap = 0;
+	}else{		
 		_displayName = "Unknown";
 	};
 
