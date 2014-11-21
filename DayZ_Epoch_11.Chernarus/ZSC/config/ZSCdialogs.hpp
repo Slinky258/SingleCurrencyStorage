@@ -111,7 +111,7 @@ class BankDialog
 			idc = -1;
 			x = 0.35;
 			y = 0.2;
-			w = 0.3;
+			w = 0.4;
 			h = (1 / 25);
 		};
 		
@@ -120,7 +120,7 @@ class BankDialog
 			idc = -1;
 			x = 0.35;
 			y = 0.2 + (11 / 250);
-			w = 0.3;
+			w = 0.4;
 			h = 0.6 - (22 / 250);
 		};
 	};
@@ -135,7 +135,7 @@ class BankDialog
 			x = 0.36;
 			y = 0.26;
 			w = 0.3;
-			h = 0.2;
+			h = 0.1;
 		};
 
 		class RscTextT_1005 : ZSC_RscText
