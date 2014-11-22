@@ -15,11 +15,21 @@ if( isNil "ZSC_Overwrite_SwitchModel" || ZSC_Overwrite_SwitchModel)then{
 player_switchModel = compile preprocessFileLineNumbers "ZSC\compiles\player_switchModel.sqf";
 };
 
+
+if( isNil "ZSC_Overwrite_LockVault" || ZSC_Overwrite_LockVault)then{
+player_lockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_lockVault.sqf";
+};
+
+if( isNil "ZSC_Overwrite_UnLockVault" || ZSC_Overwrite_UnLockVault)then{
+player_unlockVault =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_unlockVault.sqf";
+};
+	
+
 player_gearSet	=	compile preprocessFileLineNumbers "ZSC\compiles\player_gearSet.sqf";
 //This overwrite must happen, or change the files in your version of it. I Don't know any mod that changes this file tbh.
 
 
-/*overwrites*/
+/*end overwrites*/
 
 BankDialogTransferAmount = 13000;
 BankDialogPlayerBalance = 13001;
