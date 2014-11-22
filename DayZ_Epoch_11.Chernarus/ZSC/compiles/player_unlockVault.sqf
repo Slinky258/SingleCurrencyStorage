@@ -39,7 +39,7 @@ if ((_ownerID == dayz_combination) || (_ownerID == dayz_playerUID)) then {
 
 	// Check if any players are nearby if not allow player to claim item.
 	_playerNear = {isPlayer _x} count (player nearEntities ["CAManBase", 6]) > 1;
-	_playerID = [player] call FNC_GetPlayerUID;
+	_playerID = getPlayerUID player;
 	
 	// Only allow if not already claimed.
 	if (_claimedBy == "0" || !_playerNear) then {
@@ -52,7 +52,6 @@ if ((_ownerID == dayz_combination) || (_ownerID == dayz_playerUID)) then {
 	_objectID 	= _obj getVariable["ObjectID","0"];
 	_objectUID	= _obj getVariable["ObjectUID","0"];
 	_objMoney	= _obj getVariable["bankMoney",0];
-
 	_claimedBy = _obj getVariable["claimed","0"];
 	
 	if (_claimedBy == _playerID) then {
