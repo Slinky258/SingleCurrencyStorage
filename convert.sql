@@ -1,3 +1,4 @@
+convertsc: BEGIN
 DECLARE done INT DEFAULT 0;
 DECLARE @player_id VARCHAR DEFAULT "-1";
 DECLARE @instance INT DEFAULT 11;
@@ -8,15 +9,15 @@ OPEN player_cursor;
 
 read_loop: LOOP  
 	FETCH player_cursor INTO @player_id;
-	IF done <> 0 THEN
-      LEAVE read_loop;
-    END IF;
-
 	DECLARE @charid INT DEFAULT -1;
 	DECLARE @player_money BIGINT DEFAULT 0;
 	DECLARE @player_bank BIGINT DEFAULT 0;
 	DECLARE @thesum BIGINT DEFAULT 0;
 	DECLARE @player_gear LONGTEXT DEFAULT '[]';
+	
+	IF done <> 0 THEN
+      LEAVE read_loop;
+    END IF;
 	
 	select @charid = CharacterID, @player_money = CashMoney, @player_gear = SUBSTRING(Inventory , 1, CHAR_LENGTH(Inventory ) - 1) from character_data where PlayerUID = @player_id and Alive = 1;
 	select @player_bank = BankSaldo from banking_data where PlayerUID = @player_id;
@@ -41,4 +42,5 @@ CLOSE player_cursor;
 DEALLOCATE player_cursor;
 
 ALTER TABLE character_data DROP COLUMN CashMoney;
+END convertsc;
 

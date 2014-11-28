@@ -11,14 +11,14 @@ _countMags = call player_countMagazines;
 _magazines = _countMags select 0;
 
 _cashMoney = player getVariable["cashMoney",0];
-
+/*
 if (player hasWeapon "ItemGPS") then {_GPS = true;};
 if (player hasWeapon "NVGoggles") then {_NVG = true;};  
 if (player hasWeapon "ItemCompass") then {_Compass = true;};
 if (player hasWeapon "ItemWatch") then {_Watch = true;};
 if (player hasWeapon "ItemMap") then {_Map = true;};                
 if (player hasWeapon "ItemRadio") then {_Radio = true;};
-
+*/
 if ((_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText [(localize "str_epoch_player_17"), "PLAIN DOWN"]};
 
 _primweapon = primaryWeapon player;
@@ -187,9 +187,11 @@ if (_ismelee == "true") then {
 
 player setVariable ["cashMoney",_cashMoney,true];
 
+/*
 if (!isNil '_GPS' ) then {player removeWeapon "ItemGPS";}; 
 if (!isNil '_NVG' ) then {player removeWeapon "NVGoggles";};  
 if (!isNil '_Compass' ) then {player removeWeapon "ItemCompass";};
 if (!isNil '_Watch' ) then {player removeWeapon "ItemWatch";};
 if (!isNil '_Map' ) then {player removeWeapon "ItemMap";};
 if (!isNil '_Radio' ) then {player removeWeapon "ItemRadio";};
+*/

@@ -129,13 +129,12 @@ GivePlayerAmount = {
 	_target = ZSC_GiveMoneyTarget;
 	_wealth = player getVariable["cashMoney",0];
 	_twealth = _target getVariable["cashMoney",0];
-	_isMan = _target in playableUnits;
 
 	if (_amount < 1 or _amount > _wealth) exitWith {
 		cutText ["You can not give more than you currently have.", "PLAIN DOWN"];
     };
 
-	if (!_isMan) exitWith {
+	if (!(isPlayer ZSC_GiveMoneyTarget)) exitWith {
 		cutText ["You can only give money to a player", "PLAIN DOWN"];
 	};
 
