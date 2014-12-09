@@ -11,18 +11,7 @@ _myMoney = player getVariable ["cashMoney",0];
 _myMoney = _myMoney + _hisMoney;
 _body setVariable ["cashMoney", 0 , true];
 
-player setVariable ["cashMoney", _myMoney , true];
-
+if(typeName (_myMoney) == "SCALAR")then{
+    player setVariable ["cashMoney", _myMoney , true];
+};
 systemChat format ['You took %1 coins, ID says %2 !',_hisMoney,_name];
-sleep 2;
-
-_cid =	player getVariable ["CharacterID","0"];
-_cashMoney = player getVariable ["cashMoney",0];
-
-if(_cashMoney > 0) then{
-
-} else {
-
-_cashMoney = 0;
-
-};	
