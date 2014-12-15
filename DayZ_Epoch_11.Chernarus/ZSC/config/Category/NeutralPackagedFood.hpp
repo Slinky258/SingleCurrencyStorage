@@ -39,11 +39,6 @@ class Category_687 {
 		buy[] ={60,"Coins"};
 		sell[] ={30,"Coins"};
 	};
-	class FoodEdible {
-		type = "trade_items";
-		buy[] ={60,"Coins"};
-		sell[] ={30,"Coins"};
-	};
 };
 class Category_579 {
 	class FoodCanBakedBeans {
@@ -86,10 +81,4 @@ class Category_579 {
 		buy[] ={60,"Coins"};
 		sell[] ={30,"Coins"};
 	};
-	class FoodEdible {
-		type = "trade_items";
-		buy[] ={60,"Coins"};
-		sell[] ={30,"Coins"};
-	};
-
 };
