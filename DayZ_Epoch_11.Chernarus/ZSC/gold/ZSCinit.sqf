@@ -49,7 +49,7 @@ BankDialogUpdateAmounts = {
 		_sizeOfMoney = _vehicleMagazines * ZSC_MaxMoneyInStorageMultiplier;		
 		ctrlSetText [2701, format["%1", _displayName]];
 		ctrlSetText [BankDialogPlayerBalance, format["%1 %2", [player getVariable ['cashMoney', 0]] call BIS_fnc_numberText, CurrencyName]];
-		ctrlSetText [BankDialogBankBalance, format["%1 / %3 %2", [ZSC_CurrentStorage getVariable ['bankMoney', 0]] call BIS_fnc_numberText, CurrencyName, _sizeOfMoney]];
+		ctrlSetText [BankDialogBankBalance, format["%1 / %3 %2", [ZSC_CurrentStorage getVariable ['bankMoney', 0]] call BIS_fnc_numberText, CurrencyName, [_sizeOfMoney] call BIS_fnc_numberText]];
 	}else{
 		ctrlSetText [BankDialogPlayerBalance, format["Can not get vehicle capacity!","test"]];
 		ctrlSetText [BankDialogBankBalance, format["Can not get vehicle capacity!","test"]];
