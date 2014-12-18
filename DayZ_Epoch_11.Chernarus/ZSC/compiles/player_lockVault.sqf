@@ -38,6 +38,13 @@ _alreadyPacking = _obj getVariable["packing",0];
 if (_alreadyPacking == 1) exitWith {DZE_ActionInProgress = false; s_player_lockvault = -1; cutText [format[(localize "str_epoch_player_116"),_text], "PLAIN DOWN"]};
 _obj setVariable["packing",1];
 
+// Set the bank money of the old vault to zero early, to prevent dupe glitching by a second player
+_obj setVariable ["bankMoney", 0, true];
+if (s_bank_dialog >= 0) then {
+	player removeAction s_bank_dialog;
+	s_bank_dialog = -1;
+};
+
 _dir = direction _obj;
 _pos = _obj getVariable["OEMPos",(getposATL _obj)];
 
