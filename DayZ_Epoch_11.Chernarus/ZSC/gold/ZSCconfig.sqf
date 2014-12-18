@@ -12,16 +12,16 @@ ZSC_MaxMoneyInStorageMultiplier = 1000;
 // (True = No Animation / False = Animation)
 InstantTrading = false; 
 
-// If TRUE: overwrite yours player_switchmodel with mine. | IF False: Change content yourself @ step D
+// If TRUE: overwrite yours player_switchmodel.sqf with mine. | IF False: Change content yourself @ step D
 ZSC_Overwrite_SwitchModel = true; 
 
- // if TRUE: Overwrites yours fn_selfactions with default 1 + edits. | IF False: Change content yourself @ step D
+ // if TRUE: Overwrites yours fn_selfactions.sqf with default 1 + edits. | IF False: Change content yourself @ step D
 ZSC_Overwrite_SelfActions = true;
 
- // if TRUE: Overwrites yours fn_selfactions with default 1 + edits. | IF False: Change content yourself @ step D
+ // if TRUE: Overwrites yours player_unlockVault.sqf with default 1 + edits. | IF False: Change content yourself @ step D
 ZSC_Overwrite_UnLockVault = true;
 
- // if TRUE: Overwrites yours fn_selfactions with default 1 + edits. | IF False: Change content yourself @ step D
+ // if TRUE: Overwrites yours player_lockVault.sqf with default 1 + edits. | IF False: Change content yourself @ step D
 ZSC_Overwrite_LockVault = true;
 
 /* IF YOU USE different mods like P4L it's recommended to do changes yourself or it wont work */
