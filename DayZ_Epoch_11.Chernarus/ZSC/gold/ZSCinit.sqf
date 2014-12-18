@@ -14,16 +14,18 @@ fnc_usec_selfActions = compile preprocessFileLineNumbers "ZSC\compiles\fn_selfAc
 if( isNil "ZSC_Overwrite_SwitchModel" || ZSC_Overwrite_SwitchModel)then{
 player_switchModel = compile preprocessFileLineNumbers "ZSC\compiles\player_switchModel.sqf";
 };
-
-
 if( isNil "ZSC_Overwrite_LockVault" || ZSC_Overwrite_LockVault)then{
 player_lockVault =			compile preprocessFileLineNumbers "ZSC\compiles\player_lockVault.sqf";
 };
-
 if( isNil "ZSC_Overwrite_UnLockVault" || ZSC_Overwrite_UnLockVault)then{
 player_unlockVault =			compile preprocessFileLineNumbers "ZSC\compiles\player_unlockVault.sqf";
 };
-	
+if( isNil "ZSC_Overwrite_PackVault" || ZSC_Overwrite_PackVault)then{
+player_packVault =			compile preprocessFileLineNumbers "ZSC\compiles\player_packVault.sqf";
+};
+if( isNil "ZSC_Overwrite_PackTent" || ZSC_Overwrite_PackTent)then{
+player_packTent =			compile preprocessFileLineNumbers "ZSC\compiles\player_packTent.sqf";
+};
 
 player_gearSet	=	compile preprocessFileLineNumbers "ZSC\compiles\player_gearSet.sqf";
 //This overwrite must happen, or change the files in your version of it. I Don't know any mod that changes this file tbh.
