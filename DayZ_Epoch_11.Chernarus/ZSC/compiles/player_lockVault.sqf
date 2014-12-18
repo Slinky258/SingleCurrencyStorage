@@ -11,6 +11,11 @@ DZE_ActionInProgress = true;
 player removeAction s_player_lockvault;
 s_player_lockvault = 1;
 
+if (s_bank_dialog >= 0) then {
+	player removeAction s_bank_dialog;
+	s_bank_dialog = -1;
+};
+
 _obj = _this;
 _objType = typeOf _obj;
 
