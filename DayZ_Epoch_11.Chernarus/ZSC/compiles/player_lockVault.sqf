@@ -11,11 +11,6 @@ DZE_ActionInProgress = true;
 player removeAction s_player_lockvault;
 s_player_lockvault = 1;
 
-if (s_bank_dialog >= 0) then {
-	player removeAction s_bank_dialog;
-	s_bank_dialog = -1;
-};
-
 _obj = _this;
 _objType = typeOf _obj;
 
@@ -45,6 +40,10 @@ _obj setVariable["packing",1];
 
 // Set the bank money of the old vault to zero early, to prevent dupe glitching by a second player
 _obj setVariable ["bankMoney", 0, true];
+if (s_bank_dialog >= 0) then {
+	player removeAction s_bank_dialog;
+	s_bank_dialog = -1;
+};
 
 _dir = direction _obj;
 _pos = _obj getVariable["OEMPos",(getposATL _obj)];
