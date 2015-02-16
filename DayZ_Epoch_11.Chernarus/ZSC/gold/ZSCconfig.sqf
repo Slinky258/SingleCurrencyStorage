@@ -24,5 +24,11 @@ ZSC_Overwrite_UnLockVault = true;
  // if TRUE: Overwrites yours player_lockVault.sqf with default 1 + edits. | IF False: Change content yourself @ step D
 ZSC_Overwrite_LockVault = true;
 
+ // if TRUE: Overwrites yours player_packVault.sqf with default 1 + edits. | IF False: Change content yourself @ step D
+ZSC_Overwrite_PackVault = true;
+
+ // if TRUE: Overwrites yours player_packTent.sqf with default 1 + edits. | IF False: Change content yourself @ step D
+ZSC_Overwrite_PackTent = true;
+
 /* IF YOU USE different mods like P4L it's recommended to do changes yourself or it wont work */
 
