@@ -65,7 +65,14 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 
 1. All the configurations can be found in file listed below which is downloaded in this mod.
 
-	> ZSC/gold/ZSCconfig.sqf
+
+
+
+...
+	ZSC/gold/ZSCconfig.sqf
+...
+
+
 	
 
 #Installation Instructions
@@ -80,63 +87,153 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 	
 1. You must have the line below in the top section ( for example right above "EpochEvents"); Place if you do not have it yet. ZSC requires Config traders, It will also help your server reduce lag!
 
-	> DZE_ConfigTrader = true;
+
+
+
+...
+DZE_ConfigTrader = true;
+...
+
+
+
 
 1. Place the following
 
-	> call compile preprocessFileLineNumbers "ZSC\gold\ZSCinit.sqf";
-	
-	*Above
-	
-	> progressLoadingScreen 0.5;
-	
+
+
+
+...
+call compile preprocessFileLineNumbers "ZSC\gold\ZSCinit.sqf";
+...
+
+
+
+
+*Above
+
+
+
+
+...	
+progressLoadingScreen 0.5;
+...
+
+
+
+
 1. Place the following
 
-	> execVM "ZSC\compiles\playerHud.sqf";
-	
-	*Right under player monitor
-	
-	>_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-	
+
+
+
+...
+execVM "ZSC\compiles\playerHud.sqf";
+...
+
+
+
+
+*Right under player monitor
+
+
+
+
+...	
+_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+...
+
+
+
+
 1. Change 
 
-	> call compile preprocessFileLineNumbers "server_traders.sqf";
-	
-	*To this
-	
-	> call compile preprocessFileLineNumbers "server_traders_cherno_11.sqf";
-	
+
+
+
+...
+call compile preprocessFileLineNumbers "server_traders.sqf";
+...
+
+
+
+
+*To this
+
+
+
+
+...	
+call compile preprocessFileLineNumbers "server_traders_cherno_11.sqf";
+...
+
+
+
+
 1. Make sure the following line is custom and doesnt have dayz_code in it. It should point at dayz_server or if u use another script to where ever that places it.
 
-	> _serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
-	
+
+
+
+...
+_serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
+...
+
+
+
 	
 ##In your description.ext
 	
 1. Place the following code at the top
 
-	> #include "ZSC\config\cfgServerTrader.hpp"
-	
+
+
+
+...
+#include "ZSC\config\cfgServerTrader.hpp"
+...
+
+
+
+
 1. Add the following if you do not have a RSCTitles yet at the bottom
 
-	> class RscTitles
-	
-	> {
-	
-	> #include "ZSC\config\ZSChud.hpp"
-	
-	> };
-	
-	*If you already have a RSCTitles just add the following behind whatever is in there
-	
-	> #include "ZSC\config\ZSChud.hpp"
-	
+
+
+
+...
+class RscTitles
+{
+	#include "ZSC\config\ZSChud.hpp"
+};
+...
+
+
+
+
+*If you already have a RSCTitles just add the following behind whatever is in there
+
+
+
+
+...	
+#include "ZSC\config\ZSChud.hpp"
+...
+
+
+
+
 1. Add the following at very bottom.  If you come from another currency, u can remove the shit that was extra added in that one.
 
-	> #include "ZSC\config\ZSCdefines.hpp"
-	
-	> #include "ZSC\config\ZSCdialogs.hpp"
-	
+
+
+
+...
+#include "ZSC\config\ZSCdefines.hpp"
+#include "ZSC\config\ZSCdialogs.hpp"
+...
+
+
+
 
 ##Copy Files
 	
