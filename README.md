@@ -64,13 +64,9 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 #Configuring SC+Storage
 
 1. All the configurations can be found in file listed below which is downloaded in this mod.
-
-
-
-
-...
+,,,
 	ZSC/gold/ZSCconfig.sqf
-...
+,,,
 
 
 	
