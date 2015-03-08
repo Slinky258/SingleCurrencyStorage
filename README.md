@@ -55,10 +55,10 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 #Credits:
 
 *Maca - Original private single currency.
-Peterbeer -  for putting all fixes together in 1 pack.
-Soul - Hives modifications and code changes for it. ( not applied on this script, jsut credited for hard work).
-Rocu - Great help on forums and fixes.
-DraftKid - Testing and screenshots
+*Peterbeer -  for putting all fixes together in 1 pack.
+*Soul - Hives modifications and code changes for it. ( not applied on this script, jsut credited for hard work).
+*Rocu - Great help on forums and fixes.
+*DraftKid - Testing and screenshots
 
 
 #Configuring SC+Storage
@@ -74,9 +74,9 @@ DraftKid - Testing and screenshots
 
 1. If you are installing this into a custom server you should follow each step listed below or you will have problems
 
-##Mission PBO
+#Mission PBO
 
-	####In your init.sqf:
+##In your init.sqf:
 	
 1. You must have the line below in the top section ( for example right above "EpochEvents"); Place if you do not have it yet. ZSC requires Config traders, It will also help your server reduce lag!
 
@@ -152,67 +152,40 @@ DraftKid - Testing and screenshots
 1. Place the following in your fn_selfactions file
 
 	> if(_typeOfCursorTarget in ZSC_MoneyStorage && (player distance _cursorTarget < 5)) then {
-	
 	> 	if (s_bank_dialog < 0) then {
-	
 	> 		s_bank_dialog = player addAction ["Money Storage", "ZSC\actions\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
-	
 	> 	};
-	
 	> } else {
-	
 	> 	player removeAction s_bank_dialog;
-	
 	> 	s_bank_dialog = -1;
-	
 	> };
-	
 	>
-	
 	> // cars 
-	
 	> if( _isVehicle && !_isMan &&_isAlive && !_isMan && !locked _cursorTarget && !(_cursorTarget isKindOf "Bicycle") && (player distance _cursorTarget < 5)) then {	
-	
 	> 	if (s_bank_dialog2 < 0) then {
-	
 	> 		s_bank_dialog2 = player addAction ["Money Storage", "ZSC\actions\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
-	
 	> 	};
-	
 	> } else {
-	
 	> 	player removeAction s_bank_dialog2;
-	
 	> 	s_bank_dialog2 = -1;
-	
 	> };
 	
 	*After
 	
 	> } else {
-	
 	> 	{player removeAction _x} count s_player_combi;s_player_combi = [];
-	
 	> 	s_player_unlockvault = -1;
-	
 	> };
 	
 1. Place the following
 
 	> if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then {
-	
 	> 	if (s_givemoney_dialog < 0) then {
-	
 	> 		s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "ZSC\actions\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
-	
 	> 	};
-	
 	> } else {
-	
 	> 	player removeAction s_givemoney_dialog;
-	
 	> 	s_givemoney_dialog = -1;
-	
 	> };
 	
 	*Above this
@@ -222,37 +195,23 @@ DraftKid - Testing and screenshots
 1. Change the following
 
 	> if (_player_studybody) then {
-	
 	> 	if (s_player_studybody < 0) then {
-	
 	> 		s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true, "",""];
-	
 	> 	};
-	
 	> } else {
-	
 	> 	player removeAction s_player_studybody;
-	
 	> 	s_player_studybody = -1;
-	
 	> };
 	
 	*Into the following
 	
 	> if (_player_studybody) then {
-	
 	> 	if (s_player_studybody < 0) then {
-	
 	> 		s_player_studybody = player addAction [("<t color=""#FF0000"">"+("Check Wallet") + "</t>"), "ZSC\actions\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
-	
-	> 	};
-	
+	> };
 	> } else {
-	
 	> 	player removeAction s_player_studybody;
-	
 	> 	s_player_studybody = -1;
-	
 	> };
 	
 1. Add the following
