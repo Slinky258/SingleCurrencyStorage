@@ -151,6 +151,9 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 
 1. Place the following in your fn_selfactions file
 
+
+
+...
 	> if(_typeOfCursorTarget in ZSC_MoneyStorage && (player distance _cursorTarget < 5)) then {
 	> 	if (s_bank_dialog < 0) then {
 	> 		s_bank_dialog = player addAction ["Money Storage", "ZSC\actions\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
@@ -169,6 +172,10 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 	> 	player removeAction s_bank_dialog2;
 	> 	s_bank_dialog2 = -1;
 	> };
+...
+	
+	
+	
 	
 	*After
 	
