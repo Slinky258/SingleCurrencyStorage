@@ -7,34 +7,48 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 #Features:
 
 *Store Money in storage objects and vehicles ( max money in 1 storage depends on the size).
+
 *No global access to your money.
+
 *Anyone can take the money out ( for vault/lockbox it must be open of course).
+
 *Trade with this currency for cars/items.
+
 *Give money to other players.
+
 *NO inventory issues with gold!
 
 
 #Whats the difference with your other single currency scripts?
 
 *You can use the default hive!
+
 *No global bank! Back to normal epoch danger to lose cash!
+
 *Cleaned up code
+
 *Very low changes to default saving system. (DB friendly)
+
 *NO database changes needed.
+
 *NO ATMs, Safezones, atms in trader whatsoever...
+
 *Store money in vehicles.
 
 
 #Technical data:
 
 *Storage money is saved in the gear section of the object in the Database
+
 *Player Money is added to gear section of the player in the Database ( Again thanks to maca for pointing this out for me).
 
 
 #Extra:
 
 *This build will have all of the fixes on errors out there ( Build on peterbeers all in on packages with the bugfixes).
+
 *Reworked the  transfering money between players to be sure trade goes to the right object/player.
+
 *Store money in vehicles
 
 
@@ -97,7 +111,7 @@ DraftKid - Testing and screenshots
 	> _serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
 	
 	
-	####In your description.ext
+##In your description.ext
 	
 1. Place the following code at the top
 
@@ -124,14 +138,14 @@ DraftKid - Testing and screenshots
 	> #include "ZSC\config\ZSCdialogs.hpp"
 	
 
-	####Copy Files
+##Copy Files
 	
 1. Place the ZSC folder in your mission pbo ( take it out of the github's missions pbo).
 
 1. Place server_traders_cherno_11.sqf in your missions pbo. ( If other map/instance check bottom of the topic.).
 
 
-	####fn_selfactions
+##fn_selfactions
 
 1. If you don't have a custom fn_selfactions use the one downloaded with this mod and skip this section otherwise continue through this section
 
@@ -282,7 +296,7 @@ DraftKid - Testing and screenshots
 	> dayz_resetSelfActions = {
 
 	
-	####player_switchModel.sqf
+##player_switchModel.sqf
 	
 1. If you don't have a custom player_switchModel then use the one provide in this mod then you can skip this step. Otherwise continue
 
@@ -331,7 +345,7 @@ DraftKid - Testing and screenshots
 	> _newUnit setVariable ["cashMoney",_cashMoney,true];
 	
 	
-	####UnlockVault
+##UnlockVault
 	
 1. If you don't have a custom unlockVault use the one provided in this mod and skip this step. Otherwise continue through this section
 
@@ -364,7 +378,7 @@ DraftKid - Testing and screenshots
 	> _holder setVariable ["OEMPos", _pos, true];
 	
 	
-	####LockVault
+##LockVault
 	
 1. If you don't have a custom lockVault then use the one included in the mod and skip this step. Otherwise continue these steps
 
@@ -432,7 +446,7 @@ DraftKid - Testing and screenshots
 	> ];
 	
 	
-	####Server_Monitor.sqf
+##Server_Monitor.sqf
 	
 1. In your server_monitor.sqf ( NOTE: the " _intentory' variable can be called "_inventory" at your files, so change my code to that, if it's the case).
 	
@@ -467,7 +481,7 @@ DraftKid - Testing and screenshots
 	> } else {
 	
 	
-	####Server_playerSync.sqf
+##Server_playerSync.sqf
 	
 1.  In compiles/server_playerSync.sqf change the following
 
@@ -497,14 +511,18 @@ If u would have a custom one, it's defined in the ZSCinit.sqf. Only differnecy w
 	1. Share your file to me so i can put it in the list
 	
 *Does it work with Overpoch(ins).
+
 	*Simple: Yes, Everything with epoch as base.
+	
 	*Overwatch items or included in traders, remove the categories if you do not use them.
 	
 *Can I convert from the older system?
-	*You will have to revert your database to the default structure and maybe transfer money. Banks added to the players cash is the best solution.
+	*You will have to revert your database to the default structure and maybe transfer money. Banks added to the players 	cash is the best solution.
 
 *How do i see my money and bank?
+
 	1. Bank will not be visible cus their is none. You store money in storages like other items ( but in a different dialog). So the money can be accessed by anyone that has access to that storage.
+
 	1. Money is visisble with a money icon on the right side of the screen. Feel free to add it to other places aswell.
 	
 	*This will return your money:
