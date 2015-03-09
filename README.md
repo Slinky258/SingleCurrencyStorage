@@ -3,6 +3,8 @@ SingleCurrencyStorage
 
 Single currency storage is a mod that changes the currency for dayz epoch or overpoch from metals to coins. This mod also allows for these coins to be stored in objects like cars, and storage buildings as an alternative to global banking.
 
+![SC Storage](https://i.imgur.com/rBVpE6C.jpg)
+
 #Features:
 
 * Store Money in storage objects and vehicles ( max money in 1 storage depends on the size).
