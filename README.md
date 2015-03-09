@@ -3,62 +3,47 @@ SingleCurrencyStorage
 
 Single currency storage is a mod that changes the currency for dayz epoch or overpoch from metals to coins. This mod also allows for these coins to be stored in objects like cars, and storage buildings as an alternative to global banking.
 
-
 #Features:
 
-*Store Money in storage objects and vehicles ( max money in 1 storage depends on the size).
-
-*No global access to your money.
-
-*Anyone can take the money out ( for vault/lockbox it must be open of course).
-
-*Trade with this currency for cars/items.
-
-*Give money to other players.
-
-*NO inventory issues with gold!
+* Store Money in storage objects and vehicles ( max money in 1 storage depends on the size).
+* No global access to your money.
+* Anyone can take the money out ( for vault/lockbox it must be open of course).
+* Trade with this currency for cars/items.
+* Give money to other players.
+* NO inventory issues with gold!
 
 
 #Whats the difference with your other single currency scripts?
 
-*You can use the default hive!
-
-*No global bank! Back to normal epoch danger to lose cash!
-
-*Cleaned up code
-
-*Very low changes to default saving system. (DB friendly)
-
-*NO database changes needed.
-
-*NO ATMs, Safezones, atms in trader whatsoever...
-
-*Store money in vehicles.
+* You can use the default hive!
+* No global bank! Back to normal epoch danger to lose cash!
+* Cleaned up code
+* Very low changes to default saving system. (DB friendly)
+* NO database changes needed.
+* NO ATMs, Safezones, atms in trader whatsoever...
+* Store money in vehicles.
 
 
 #Technical data:
 
-*Storage money is saved in the gear section of the object in the Database
-
-*Player Money is added to gear section of the player in the Database ( Again thanks to maca for pointing this out for me).
+* Storage money is saved in the gear section of the object in the Database
+* Player Money is added to gear section of the player in the Database ( Again thanks to maca for pointing this out for me).
 
 
 #Extra:
 
-*This build will have all of the fixes on errors out there ( Build on peterbeers all in on packages with the bugfixes).
-
-*Reworked the  transfering money between players to be sure trade goes to the right object/player.
-
-*Store money in vehicles
+* This build will have all of the fixes on errors out there ( Build on peterbeers all in on packages with the bugfixes).
+* Reworked the  transfering money between players to be sure trade goes to the right object/player.
+* Store money in vehicles
 
 
 #Credits:
 
-*Maca - Original private single currency.
-*Peterbeer -  for putting all fixes together in 1 pack.
-*Soul - Hives modifications and code changes for it. ( not applied on this script, jsut credited for hard work).
-*Rocu - Great help on forums and fixes.
-*DraftKid - Testing and screenshots
+* Maca - Original private single currency.
+* Peterbeer -  for putting all fixes together in 1 pack.
+* Soul - Hives modifications and code changes for it. ( not applied on this script, jsut credited for hard work).
+* Rocu - Great help on forums and fixes.
+* DraftKid - Testing and screenshots
 
 
 #Configuring SC+Storage
@@ -99,7 +84,7 @@ progressLoadingScreen 0.5;
 ```
 execVM "ZSC\compiles\playerHud.sqf";
 ```
-*Right under player monitor
+* Right under player monitor
 ```	
 _playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
 ```
@@ -109,7 +94,7 @@ _playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
 ```
 call compile preprocessFileLineNumbers "server_traders.sqf";
 ```
-*To this
+* To this
 ```	
 call compile preprocessFileLineNumbers "server_traders_cherno_11.sqf";
 ```
@@ -183,7 +168,7 @@ if( _isVehicle && !_isMan &&_isAlive && !_isMan && !locked _cursorTarget && !(_c
 	s_bank_dialog2 = -1;
  };
 ```
-*After
+* After
 ```
  } else {
 	{player removeAction _x} count s_player_combi;s_player_combi = [];
@@ -203,7 +188,7 @@ if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serve
 	s_givemoney_dialog = -1;
 };
 ```
-*Above this
+* Above this
 ```
 if(_typeOfCursorTarget in dayz_fuelpumparray) then {
 ```
@@ -220,7 +205,7 @@ if (_player_studybody) then {
 	s_player_studybody = -1;
 };
 ```
-*Into the following
+* Into the following
 ```
 if (_player_studybody) then {
 	if (s_player_studybody < 0) then {
@@ -242,7 +227,7 @@ s_bank_dialog = -1;
 player removeAction s_bank_dialog2;
 s_bank_dialog2 = -1;
 ```
-*Behind the following
+* Behind the following
 ```
 player removeAction s_player_towing;
 s_player_towing = -1;
@@ -259,7 +244,7 @@ s_givemoney_dialog = -1;
 s_bank_dialog = -1;
 s_bank_dialog2 = -1;
 ```
-*To this
+* To this
 ```
 dayz_resetSelfActions = {
 ```
@@ -272,7 +257,7 @@ dayz_resetSelfActions = {
 ```
 _cashMoney = player getVariable["cashMoney",0];
 ```
-*Behind
+* Behind
 ```	
 _weapons = weapons player;
 _countMags = call player_countMagazines; 
@@ -295,7 +280,7 @@ _newUnit = _group createUnit [_class,dayz_spawnPos,[],0,"NONE"];
 _newUnit 	setPosATL _position;
 _newUnit 	setDir _dir;
 ```
-*Into the following
+* Into the following
 ```
 _newUnit 	setDir _dir;
 _newUnit = _group createUnit [_class,dayz_spawnPos,[],0,"NONE"];
@@ -314,7 +299,7 @@ _newUnit setVariable ["cashMoney",_cashMoney,true];
 ```
 _objMoney	= _obj getVariable["bankMoney",0];
 ```
-*Behind the following
+* Behind the following
 ```
 _dir = direction _obj;
 _pos	= _obj getVariable["OEMPos",(getposATL _obj)];
@@ -327,7 +312,7 @@ _objectUID	= _obj getVariable["ObjectUID","0"];
 ```
 _holder setVariable ["bankMoney", _objMoney, true];
 ```
-*Behind the following
+* Behind the following
 ```
 _holder setVariable["CharacterID",_ownerID,true];
 _holder setVariable["ObjectID",_objectID,true];
@@ -344,7 +329,7 @@ _holder setVariable ["OEMPos", _pos, true];
 ```
 _objMoney	= _obj getVariable["bankMoney",0];
 ```
-*Behind the following
+* Behind the following
 ```
 _ownerID = _obj getVariable["CharacterID","0"];
 _objectID 	= _obj getVariable["ObjectID","0"];
@@ -356,7 +341,7 @@ _objectUID	= _obj getVariable["ObjectUID","0"];
 ```
 _holder setVariable ["bankMoney", _objMoney, true];
 ```
-	*Behind the following
+* Behind the following
 ```
 _holder setVariable["CharacterID",_ownerID,true];
 _holder setVariable["ObjectID",_objectID,true];
@@ -379,7 +364,7 @@ _inventory = [
 	getBackpackCargo _object
 ];
 ```	
-*Into the following
+* Into the following
 ```
 _inventory = [
 	getWeaponCargo _object,
@@ -406,7 +391,7 @@ if( count (_intentory) > 3)then{
 };
 /*ZSC*/
 ```	
-*Above the following
+* Above the following
 ```
 if (_type in DZE_LockedStorage) then {
 	// Fill variables with loot
@@ -423,7 +408,7 @@ if (_type in DZE_LockedStorage) then {
 ```
 _playerGear = [weapons _character,_magazines];
 ```
-*Into the following
+* Into the following
 ```
 _playerGear = [weapons _character,_magazines, _character getVariable["cashMoney",0]];
 ```
@@ -436,39 +421,39 @@ If u would have a custom one, it's defined in the ZSCinit.sqf. Only differnecy w
 
 ##FAQ
 
-*I use a different instance/map to play one! What do i do?
-	*The only things that difference between maps where u need to worrie about is the server_traders.sqf. I included them for 4 maps, if your map is NOT in there u will have to change your original one.FAIR SIMPLE:
+* I use a different instance/map to play one! What do i do?
+	* The only things that difference between maps where u need to worrie about is the server_traders.sqf. I included them for 4 maps, if your map is NOT in there u will have to change your original one.FAIR SIMPLE:
 	
-	1. Take your original server_traders
+1. Take your original server_traders
 	
-	1. Open one of mine
+1. Open one of mine
 	
-	1. Copy my categories with the correct numbes to your traders. You can choose also which traders sells what then ^^.
+1. Copy my categories with the correct numbes to your traders. You can choose also which traders sells what then ^^.
 	
-	1. Share your file to me so i can put it in the list
+1. Share your file to me so i can put it in the list
 	
-*Does it work with Overpoch(ins).
+* Does it work with Overpoch(ins).
 
-	*Simple: Yes, Everything with epoch as base.
+	* Simple: Yes, Everything with epoch as base.
 	
-	*Overwatch items or included in traders, remove the categories if you do not use them.
+	* Overwatch items or included in traders, remove the categories if you do not use them.
 	
-*Can I convert from the older system?
-	*You will have to revert your database to the default structure and maybe transfer money. Banks added to the players 	cash is the best solution.
+* Can I convert from the older system?
+	* You will have to revert your database to the default structure and maybe transfer money. Banks added to the players 	cash is the best solution.
 
-*How do i see my money and bank?
+* How do i see my money and bank?
 
-	1. Bank will not be visible cus their is none. You store money in storages like other items ( but in a different dialog). So the money can be accessed by anyone that has access to that storage.
+1. Bank will not be visible cus their is none. You store money in storages like other items ( but in a different dialog). So the money can be accessed by anyone that has access to that storage.
 
-	1. Money is visisble with a money icon on the right side of the screen. Feel free to add it to other places aswell.
+1. Money is visisble with a money icon on the right side of the screen. Feel free to add it to other places aswell.
 	
-	*This will return your money:
+	* This will return your money:
 	```
 	 player getVariable["cashMoney",0];
 	```
 	
-*Can I use it with database traders?
-	*No, this build is made for config traders. No support (Yet).
+* Can I use it with database traders?
+	* No, this build is made for config traders. No support (Yet).
 	
 ##Images
 
