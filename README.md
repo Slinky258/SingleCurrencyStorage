@@ -41,11 +41,13 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 
 #Credits:
 
+* Zupa - Creator of SC Storage
 * Maca - Original private single currency.
 * Peterbeer -  for putting all fixes together in 1 pack.
 * Soul - Hives modifications and code changes for it. ( not applied on this script, jsut credited for hard work).
 * Rocu - Great help on forums and fixes.
 * DraftKid - Testing and screenshots
+* bbatton - Mod Documentation
 
 
 #Configuring SC+Storage
@@ -72,7 +74,7 @@ DZE_ConfigTrader = true;
 ```
 
 
-1. Place the following
+2. Place the following
 ```
 call compile preprocessFileLineNumbers "ZSC\gold\ZSCinit.sqf";
 ```
@@ -82,7 +84,7 @@ progressLoadingScreen 0.5;
 ```
 
 
-1. Place the following
+3. Place the following
 ```
 execVM "ZSC\compiles\playerHud.sqf";
 ```
@@ -92,7 +94,7 @@ _playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
 ```
 
 
-1. Change 
+4. Change 
 ```
 call compile preprocessFileLineNumbers "server_traders.sqf";
 ```
@@ -102,7 +104,7 @@ call compile preprocessFileLineNumbers "server_traders_cherno_11.sqf";
 ```
 
 
-1. Make sure the following line is custom and doesnt have dayz_code in it. It should point at dayz_server or if u use another script to where ever that places it.
+5. Make sure the following line is custom and doesnt have dayz_code in it. It should point at dayz_server or if u use another script to where ever that places it.
 ```
 _serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
 ```
@@ -116,7 +118,7 @@ _serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
 ```
 
 
-1. Add the following if you do not have a RSCTitles yet at the bottom
+2. Add the following if you do not have a RSCTitles yet at the bottom
 ```
 class RscTitles
 {
@@ -131,7 +133,7 @@ class RscTitles
 ```
 
 
-1. Add the following at very bottom.  If you come from another currency, u can remove the shit that was extra added in that one.
+3. Add the following at very bottom.  If you come from another currency, u can remove the shit that was extra added in that one.
 ```
 #include "ZSC\config\ZSCdefines.hpp"
 #include "ZSC\config\ZSCdialogs.hpp"
@@ -179,7 +181,7 @@ if( _isVehicle && !_isMan &&_isAlive && !_isMan && !locked _cursorTarget && !(_c
 ```
 
 
-1. Place the following
+3. Place the following
 ```
 if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then {
 	if (s_givemoney_dialog < 0) then {
@@ -196,7 +198,7 @@ if(_typeOfCursorTarget in dayz_fuelpumparray) then {
 ```
 
 
-1. Change the following
+4. Change the following
 ```
 if (_player_studybody) then {
 	if (s_player_studybody < 0) then {
@@ -220,7 +222,7 @@ if (_player_studybody) then {
 ```
 
 
-1. Add the following
+5. Add the following
 ```
 player removeAction s_givemoney_dialog;
 s_givemoney_dialog = -1;
@@ -240,7 +242,7 @@ s_player_fuelauto2 = -1;
 ```
 
 
-1. To remove the client side errors you get add the following in your Variables.sqf
+6. To remove the client side errors you get add the following in your Variables.sqf
 ```
 s_givemoney_dialog = -1;
 s_bank_dialog = -1;
@@ -267,13 +269,13 @@ _magazines = _countMags select 0;
 ```
 
 
-1. Add the following at the bottom
+3. Add the following at the bottom
 ```
 player setVariable ["cashMoney",_cashMoney,true];
 ```
 
 
-1. Change the following
+4. Change the following
 ```
 //Create New Character
 _group = createGroup west;
@@ -310,7 +312,7 @@ _objectUID	= _obj getVariable["ObjectUID","0"];
 ```
 
 
-1. Place the following
+3. Place the following
 ```
 _holder setVariable ["bankMoney", _objMoney, true];
 ```
@@ -339,7 +341,7 @@ _objectUID	= _obj getVariable["ObjectUID","0"];
 ```
 
 
-1. Place the following
+3. Place the following
 ```
 _holder setVariable ["bankMoney", _objMoney, true];
 ```
