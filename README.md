@@ -69,9 +69,9 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 ##In your init.sqf:
 	
 1. You must have the line below in the top section ( for example right above "EpochEvents"); Place if you do not have it yet. ZSC requires Config traders, It will also help your server reduce lag!
-```
-DZE_ConfigTrader = true;
-```
+	```
+	DZE_ConfigTrader = true;
+	```
 
 
 2. Place the following
