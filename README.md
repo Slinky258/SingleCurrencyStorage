@@ -74,40 +74,40 @@ Single currency storage is a mod that changes the currency for dayz epoch or ove
 	```
 
 
-2. Place the following
-```
-call compile preprocessFileLineNumbers "ZSC\gold\ZSCinit.sqf";
-```
-*Above
-```	
-progressLoadingScreen 0.5;
-```
+1. Place the following
+	```
+	call compile preprocessFileLineNumbers "ZSC\gold\ZSCinit.sqf";
+	```
+	*Above
+	```	
+	progressLoadingScreen 0.5;
+	```
 
 
-3. Place the following
-```
-execVM "ZSC\compiles\playerHud.sqf";
-```
-* Right under player monitor
-```	
-_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-```
+1. Place the following
+	```
+	execVM "ZSC\compiles\playerHud.sqf";
+	```
+	* Right under player monitor
+	```	
+	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+	```
 
 
-4. Change 
-```
-call compile preprocessFileLineNumbers "server_traders.sqf";
-```
-* To this
-```	
-call compile preprocessFileLineNumbers "server_traders_cherno_11.sqf";
-```
+1. Change 
+	```
+	call compile preprocessFileLineNumbers "server_traders.sqf";
+	```
+	* To this
+	```	
+	call compile preprocessFileLineNumbers "server_traders_cherno_11.sqf";
+	```
 
 
-5. Make sure the following line is custom and doesnt have dayz_code in it. It should point at dayz_server or if u use another script to where ever that places it.
-```
-_serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
-```
+1. Make sure the following line is custom and doesnt have dayz_code in it. It should point at dayz_server or if u use another script to where ever that places it.
+	```
+	_serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
+	```
 
 	
 ##In your description.ext
