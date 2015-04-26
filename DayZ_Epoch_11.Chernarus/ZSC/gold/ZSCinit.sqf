@@ -72,7 +72,9 @@ BankDialogWithdrawAmount = {
 	_wealth = player getVariable["cashMoney",0];
 	_vehicleType = typeOf ZSC_CurrentStorage; 
 	_displayName = getText  (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");		
-
+	
+	if (!isNull ZSC_CurrentStorage) then {
+	
 	if (_amount < 1 or _amount > _bank) exitWith {
 		cutText [format["You can not withdraw more than is in the %1.",_displayName], "PLAIN DOWN"];
 	};
@@ -87,6 +89,9 @@ BankDialogWithdrawAmount = {
 	publicVariableServer "PVDZE_veh_Update";
 
 	cutText [format["You have withdrawn %1 %2 out of the %3", [_amount] call BIS_fnc_numberText, CurrencyName,_displayName], "PLAIN DOWN"];
+	}else{
+	cutText ["Unable to access Money Storage. Please try again.", "PLAIN DOWN"];
+};
 };
 
 BankDialogDepositAmount = {
