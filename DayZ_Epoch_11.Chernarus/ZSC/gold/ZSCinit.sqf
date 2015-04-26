@@ -71,7 +71,14 @@ BankDialogWithdrawAmount = {
 	_bank = ZSC_CurrentStorage getVariable ["bankMoney", 0];
 	_wealth = player getVariable["cashMoney",0];
 	_vehicleType = typeOf ZSC_CurrentStorage; 
-	_displayName = getText  (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");		
+	_displayName = getText  (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");	
+	
+	/* 
+	Check to see if the storage is still there.
+	Without this check, if the vault is locked by another player before the bank dialog is closed,
+	_bank will return a null value and allow you to withdraw any amount of money.
+	*/
+	if (!isNull ZSC_CurrentStorage) then {
 
 	if (_amount < 1 or _amount > _bank) exitWith {
 		cutText [format["You can not withdraw more than is in the %1.",_displayName], "PLAIN DOWN"];
@@ -87,6 +94,12 @@ BankDialogWithdrawAmount = {
 	publicVariableServer "PVDZE_veh_Update";
 
 	cutText [format["You have withdrawn %1 %2 out of the %3", [_amount] call BIS_fnc_numberText, CurrencyName,_displayName], "PLAIN DOWN"];
+	
+	//Message to inform player that the vault has been locked.
+	} else {
+	cutText ["The Vault you are trying to withdraw money from no longer exists or has been locked!", "PLAIN DOWN"];
+ 
+};
 };
 
 BankDialogDepositAmount = {
